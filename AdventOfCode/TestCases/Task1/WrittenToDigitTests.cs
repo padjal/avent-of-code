@@ -56,6 +56,7 @@ namespace TestCases.Task1
         [TestMethod]
         public void FindEdgeCases()
         {
+            regex = new Regex("(one)|(two)|(three)|(four)|(five)|(six)|(seven)|(eight)|(nine)|[0-9]", RegexOptions.RightToLeft);
             var input = "sevenine";
 
             var matches = regex.Matches(input);

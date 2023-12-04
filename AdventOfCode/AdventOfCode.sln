@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestCases", "TestCases\Test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task2", "Task2\Task2.csproj", "{B1905758-775A-442B-8929-FEB66C15CA3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task3", "Task3\Task3.csproj", "{A6B083F0-FEAD-4EAF-BCBD-A7E9ED49C621}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task3", "Task3\Task3.csproj", "{A6B083F0-FEAD-4EAF-BCBD-A7E9ED49C621}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdventOfCode.Core", "AdventOfCode.Core\AdventOfCode.Core.csproj", "{A3116479-361A-4FFF-AE65-E063A55E7EBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4", "Task4\Task4.csproj", "{B25BEB44-DC6B-430C-985A-BE9735F05399}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{A6B083F0-FEAD-4EAF-BCBD-A7E9ED49C621}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6B083F0-FEAD-4EAF-BCBD-A7E9ED49C621}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6B083F0-FEAD-4EAF-BCBD-A7E9ED49C621}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3116479-361A-4FFF-AE65-E063A55E7EBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3116479-361A-4FFF-AE65-E063A55E7EBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3116479-361A-4FFF-AE65-E063A55E7EBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3116479-361A-4FFF-AE65-E063A55E7EBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B25BEB44-DC6B-430C-985A-BE9735F05399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B25BEB44-DC6B-430C-985A-BE9735F05399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B25BEB44-DC6B-430C-985A-BE9735F05399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B25BEB44-DC6B-430C-985A-BE9735F05399}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

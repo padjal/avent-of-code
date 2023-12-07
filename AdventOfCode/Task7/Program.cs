@@ -6,9 +6,7 @@ namespace Task7
     // Camel cards
     internal class Program
     {
-        const string INPUT_FILE = "../../../input.txt";
-
-        
+        const string INPUT_FILE = "../../../input.txt";        
 
         static void Main(string[] args)
         {
@@ -56,7 +54,22 @@ namespace Task7
 
         static void PartTwo(List<Hand> hands)
         {
-            Console.WriteLine($"Result of part 2: {0}");
+            var totalWinnings = 0;
+
+            hands.ForEach(h => h.Version = 2);
+
+            hands.Sort();
+
+            var rank = 1;
+
+            foreach (var hand in hands)
+            {
+                hand.Rank = rank++;
+            }
+
+            totalWinnings = hands.Sum(h => h.Bet * h.Rank);
+
+            Console.WriteLine($"Result of part 2: {totalWinnings}");
         }
 
         public enum HandType
@@ -74,6 +87,7 @@ namespace Task7
         {
             Dictionary<char, int> _cardStrength = new()
             {
+                {'J', 0},
                 {'2', 1},
                 {'3', 2},
                 {'4', 3},
@@ -83,7 +97,6 @@ namespace Task7
                 {'8', 7},
                 {'9', 8},
                 {'T', 9},
-                {'J', 10},
                 {'Q', 11},
                 {'K', 12},
                 {'A', 13}
@@ -93,6 +106,8 @@ namespace Task7
 
             public int Bet { get; set; }
 
+            public int Version { get; set; }
+
             public int Rank { get; set; }
 
             public HandType Type
@@ -100,6 +115,29 @@ namespace Task7
                 get
                 {
                     var cardGroups = Cards.GroupBy(c => c);
+
+                    if (Version == 2)
+                    {
+                        // All J's turn into the most common char
+
+                        cardGroups = cardGroups.Where(c => c.Key != 'J');
+
+                        //Edge case
+                        if(cardGroups.Count() == 0)
+                        {
+                            return HandType.FiveOfAKind;
+                        }
+
+                        var maxOccurrences = cardGroups.Max(c => c.Count());
+
+                        var mostCommonChars = cardGroups.Where(c => c.Count() == maxOccurrences);
+
+                        var mostCommonChar = mostCommonChars.MaxBy(c => _cardStrength[c.Key]).ElementAt(0);
+
+                        var changedCards = Cards.Replace('J', mostCommonChar);
+
+                        cardGroups = changedCards.GroupBy(c => c);
+                    }
 
                     if (cardGroups.Where(g => g.Count() == 5).Count() > 0) 
                         return HandType.FiveOfAKind;
@@ -118,7 +156,7 @@ namespace Task7
                 }
             }
 
-
+            
             int IComparable<Hand>.CompareTo(Hand? other)
             {
                 if (other == null) return 1;

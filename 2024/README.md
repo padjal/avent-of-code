@@ -1,0 +1,1 @@
+For 2024, I have made it my mission to complete as much problems from the Advent of Code as possible using the Rust programming language. While solving the puzzles, I am reading the Rust Programming Book.

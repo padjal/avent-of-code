@@ -1,5 +1,5 @@
 # Binaries
-/target/
+.target/
 
 # Rust/Cargo specific files
 **/*.rs.bk

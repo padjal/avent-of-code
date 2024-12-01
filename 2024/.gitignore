@@ -1,0 +1,27 @@
+# Binaries
+/target/
+
+# Rust/Cargo specific files
+**/*.rs.bk
+**/*.rlib
+
+# Cargo.lock if using a library (not an application)
+# Uncomment the following line if this is a library, not a binary application
+# Cargo.lock
+
+# IntelliJ IDEA/CLion specific
+.idea/
+*.iml
+
+# Visual Studio Code specific
+.vscode/
+
+# Other editor specific
+*.swp
+*.swo
+
+# MacOS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db

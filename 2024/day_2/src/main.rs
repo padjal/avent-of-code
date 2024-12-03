@@ -1,5 +1,3 @@
-use core::error;
-use std::env;
 use std::fs::read_to_string;
 
 fn main() {

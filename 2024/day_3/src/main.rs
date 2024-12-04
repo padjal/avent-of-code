@@ -1,5 +1,3 @@
-use core::panic;
-use regex::Match;
 use regex::Regex;
 use std::fs::read_to_string;
 

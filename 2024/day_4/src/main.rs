@@ -117,7 +117,7 @@ fn diagonals(input: &Vec<Vec<char>>) -> i32 {
     let mut diagonals: Vec<Vec<char>> = Vec::with_capacity(number_of_diagonals);
 
     // Populate
-    for i in 0..number_of_diagonals {
+    for _i in 0..number_of_diagonals {
         diagonals.push(Vec::new());
     }
 
@@ -143,7 +143,7 @@ fn diagonals(input: &Vec<Vec<char>>) -> i32 {
 
     // Check for XMAS
     for i in 0..diagonals.len() {
-        if (diagonals[i].len() < 4) {
+        if diagonals[i].len() < 4 {
             continue;
         }
 
@@ -185,12 +185,12 @@ fn rotate_matrix(input: &Vec<Vec<char>>) -> Vec<Vec<char>> {
     let mut result = Vec::with_capacity(columns);
 
     // Populate
-    for i in 0..columns {
+    for _i in 0..columns {
         result.push(Vec::with_capacity(rows));
     }
 
     for i in 0..columns {
-        for j in 0..rows {
+        for _j in 0..rows {
             result[i].push(' ');
         }
     }
@@ -222,8 +222,6 @@ fn find_mas_occurences(input: &Vec<Vec<char>>) -> i32 {
             if input[i][j] != 'A' {
                 continue;
             }
-
-            let mut flag = false;
 
             // Find if there is an MAS
             if (input[i - 1][j - 1] == 'M' && input[i + 1][j + 1] == 'S'
